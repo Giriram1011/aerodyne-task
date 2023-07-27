@@ -40,8 +40,19 @@ MongoDB access from centeralized db
 Add mongoDb url in .env file 
 Behind project folder
 cd ..
-sudo docker build ./aerodyne-task/ -t giriram/aerodyne-task
-sudo docker run -p 8080:3000 giriram/aerodyne-task
-sudo docker ps
-sude docker images
-sudo docker stop [containerId]
+
+
+$ sudo docker build ./aerodyne-task/ -t giriram/aerodyne-task
+
+
+
+$ sudo docker run -p 8080:3000 giriram/aerodyne-task
+
+
+$ sudo docker ps
+
+
+$ sude docker images
+
+
+$ sudo docker stop [containerId]
