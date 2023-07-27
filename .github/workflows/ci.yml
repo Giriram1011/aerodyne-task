@@ -1,0 +1,29 @@
+name : testcase run
+
+on: 
+ push: 
+ branches:
+   -'main'
+   pull_request:
+   branches:
+   -'main'
+
+
+jobs:
+ test:
+ runs-on: ubuntu-latest
+
+ steps:
+ -name: checkout
+ uses: actions/checkout@v2
+ -name: setup node
+ uses : actions/checkout@v2
+ with:
+   node-version: 18
+   -name : Install deps
+   run: npm ci
+   -name: Run testcase
+   run: npm test  
+
+
+ run : echo "tescase run"
