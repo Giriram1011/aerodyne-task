@@ -36,6 +36,8 @@ Docker
 
 Nest only maked inside docker 
 MongoDB access from centeralized db
+
+Add mongoDb url in .env file 
 Behind project folder
 cd ..
 sudo docker build ./aerodyne-task/ -t giriram/aerodyne-task
