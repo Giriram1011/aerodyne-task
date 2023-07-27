@@ -24,11 +24,15 @@ describe('UserController (E2E)', () => {
 
   const createUserDto: CreateUserDto = {
     name: 'John Doe',
-    email: 'john.doe@example.com',
+    email: generateRandomEmail(),
     bio: 'Sample bio',
     address: 'Sample address',
   };
-
+  function generateRandomEmail(): string {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    const randomString = Array.from({ length: 10 }, () => alphabet[Math.floor(Math.random() * alphabet.length)]).join("");
+    return `${randomString}.doe@example.com`;
+  }
   let createdUserId: string;
 
   it('/user (POST) should create a new user', async () => {
@@ -48,8 +52,6 @@ describe('UserController (E2E)', () => {
         address: createUserDto.address,
       }),
     });
-
-    // Save the created user ID for later use in the next test
     createdUserId = response.body.data._id;
   });
 
@@ -72,7 +74,7 @@ describe('UserController (E2E)', () => {
   });
 
   it('/user/:id (GET) should return 404 when user is not found', async () => {
-    const nonExistentId = 'non-existent-id';
+    const nonExistentId = "64c24c2c837a371bae903efa";
     await request(app.getHttpServer())
       .get(`/user/${nonExistentId}`)
       .expect(HttpStatus.NOT_FOUND);
