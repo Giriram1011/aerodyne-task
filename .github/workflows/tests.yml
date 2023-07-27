@@ -1,5 +1,4 @@
-name: testcase run
-
+name: Test Code Base
 on: 
  push: 
  branches:

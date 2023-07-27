@@ -30,17 +30,16 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+git link - https://github.com/Giriram1011/aerodyne-task.git
 
-## Support
+Docker
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Nest only maked inside docker 
+MongoDB access from centeralized db
+Behind project folder
+cd ..
+sudo docker build ./aerodyne-task/ -t giriram/aerodyne-task
+sudo docker run -p 8080:3000 giriram/aerodyne-task
+sudo docker ps
+sude docker images
+sudo docker stop [containerId]
