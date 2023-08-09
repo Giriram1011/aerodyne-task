@@ -11,7 +11,10 @@ export class UserService {
   async create(createUserDto: CreateUserDto): Promise<{ status: number; message: string; data: User }> {
     const createdUser = await this.userModel.create(createUserDto);
     return { status: 201, message: 'User created successfully!', data: createdUser };
-  }
+                       }
+
+
+
   
   async findAll(): Promise<{ status: number; message: string; data: User[] }> {
     const userList = await this.userModel.find({}).exec();
